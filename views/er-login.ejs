@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Schedular - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="stylesheets/login.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+   
+
+    <div id="main">
+        <div class="first input">
+            <div id="title">Sign in to Schedular as an Interviewer!</div>
+            <div id="subt">Please enter your details!</div>
+
+            <form action="er-auth" method="POST">
+
+                <% if(errors.login) {%>
+                    <div class="error">
+                        <%= errors.login %>
+                    </div>
+                    <% } %>
+
+                        <div class="label">Username:</div>
+                        <input class='text-input' type="text" name="username" placeholder="Enter a username here!"
+                            value="" required>
+                        <div class="label">Password:</div>
+                        <input class='text-input' type="password" name="password"
+                            placeholder="Enter your password here!" minlength="8" required>
+                        <input type="submit" value="Login">
+            </form>
+            <div id="text">Not a member? <a style="color:#E2036E;" href="/er-signup">Signup!</a></div>
+        </div>
+    </div>
+
+</body>
+
+</html>

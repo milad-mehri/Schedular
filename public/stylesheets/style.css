@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Ubuntu;
+    background-image: url('/assets/index/Background.png');
+}
+
+button {
+    border: none;
+}
+
+a {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#nav-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+    padding: 0px 5vw;
+    height: 100px;
+    background: #FFFFFF;
+    box-shadow: 0px 9px 16px rgba(0, 0, 0, 0.05);
+}
+
+#nav-left:hover,
+#nav-right:hover {
+    cursor: pointer;
+}
+
+#nav-elem {
+    width: auto;
+    height: 40px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #00A8FF;
+    border-radius: 10px;
+    font-size: 15px;
+    color: white;
+    margin: 0px 10px;
+}
+
+#nav-elem:hover {
+    background: #00A8FF;
+    color: white;
+    opacity: 0.5;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+i {
+    font-family: Ubuntu;
+padding: 10px;
+}

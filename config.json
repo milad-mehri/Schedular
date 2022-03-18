@@ -1,0 +1,3 @@
+{
+    "mongoUri": "mongodb+srv://milad:miladmilad@schedule.fefoy.mongodb.net/database?retryWrites=true&w=majority"
+}
