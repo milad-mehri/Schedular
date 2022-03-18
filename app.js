@@ -293,6 +293,10 @@ app.post('/er-join', async (req, res) => {
     }
 })
 
+app.get('/data', (req, res) => {
+    res.json(req.session)
+})
+
 server.listen(3000, function () {
     console.log("Listening on port 3000")
 })
