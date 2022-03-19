@@ -25,8 +25,9 @@ const interviewer = mongoose.Schema({
     password: reqString,
     email: reqString,
     joinTimeStamp: reqNumber,
-    appointments : unReqObject,
-    availability : unReqObject
+    appointments: unReqObject,
+    availability: unReqObject,
+    interviewer: { type: Boolean }
 })
 
 module.exports = mongoose.model('interviewers', interviewer)

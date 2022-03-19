@@ -28,7 +28,9 @@ const interviewee = mongoose.Schema({
     website: unReqString,
     linkedin: unReqString,
     joinTimeStamp: reqNumber,
-    availability : unReqObject
+    availability : unReqObject,
+    interviewer: {type: Boolean}
+    
 
 })
 

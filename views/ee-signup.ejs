@@ -25,47 +25,48 @@
                         <%= errors.login %>
                     </div>
                     <% } %>
-                    <% if(errors.username) {%>
-                        <div class="error">
-                            <%= errors.username %>
-                        </div>
-                    <% } %>
-                        <div class="label">Username:</div>
-                        <input class='text-input' type="text" name="username" placeholder="Enter a username here!"
-                            value="" required>
-
-                            <% if(errors.password) {%>
-                                <div class="error">
-                                    <%= errors.password %>
-                                </div>
+                        <% if(errors.username) {%>
+                            <div class="error">
+                                <%= errors.username %>
+                            </div>
                             <% } %>
-                        <div class="label">Password:</div>
-                        <input class='text-input' type="password" name="password"
-                            placeholder="Enter your password here!" minlength="8" required>
+                                <div class="label">Username:</div>
+                                <input class='text-input' type="text" name="username"
+                                    placeholder="Enter a username here!" value="" required>
 
-                            <% if(errors.email) {%>
-                                <div class="error">
-                                    <%= errors.email %>
-                                </div>
-                            <% } %>
-                        <div class="label">Email:</div>
-                        <input class='text-input' type="text" name="email" placeholder="Enter your email here!"
-                            value="">
+                                <% if(errors.password) {%>
+                                    <div class="error">
+                                        <%= errors.password %>
+                                    </div>
+                                    <% } %>
+                                        <div class="label">Password:</div>
+                                        <input class='text-input' type="password" name="password"
+                                            placeholder="Enter your password here!" minlength="8" required>
 
-                        <div class="label">Website:</div>
-                        <input class='text-input' type="text" name="website" placeholder="Enter your website here!"
-                            value="">
+                                        <% if(errors.email) {%>
+                                            <div class="error">
+                                                <%= errors.email %>
+                                            </div>
+                                            <% } %>
+                                                <div class="label">Email:</div>
+                                                <input class='text-input' type="text" name="email"
+                                                    placeholder="Enter your email here!" value="">
 
-                        <div class="label">Github:</div>
-                        <input class='text-input' type="text" name="github" placeholder="Enter your github here!"
-                            value="">
-                        <div class="label">Linkedin:</div>
+                                                <div class="label">Website:</div>
+                                                <input class='text-input' type="text" name="website"
+                                                    placeholder="Enter your website here!" value="">
 
-                        <input class='text-input' type="text" name="linkedin" placeholder="Enter your linkedin here!"
-                            value="">
-                        <input type="submit" value="Signup">
+                                                <div class="label">Github:</div>
+                                                <input class='text-input' type="text" name="github"
+                                                    placeholder="Enter your github here!" value="">
+                                                <div class="label">Linkedin:</div>
+
+                                                <input class='text-input' type="text" name="linkedin"
+                                                    placeholder="Enter your linkedin here!" value="">
+                                                <input type="submit" value="Signup">
             </form>
-            <div id="text">Already a member? <a style="color:#E2036E;" href="/ee-login">Login!</a></div>
+            <div id="text">Already a member? <a style="color:#E2036E;" href="/ee-login">Login!</a><br>Interviewer? <a style="color:#E2036E;" href="/er-signup">Signup as interviewer!</a></div>
+       
         </div>
     </div>
 

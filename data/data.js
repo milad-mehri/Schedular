@@ -46,7 +46,8 @@ const newInterviewer = async (
         username: username,
         password: password,
         email: email,
-        joinTimeStamp: timeStamp
+        joinTimeStamp: timeStamp,
+        interviewer:true
     }).save()
     return user
 }
@@ -70,7 +71,8 @@ const newInterviewee = async (
         joinTimeStamp: timeStamp,
         github: github,
         website: website,
-        linkedin: linkedin
+        linkedin: linkedin,
+        interviewer:false
     }).save()
     return user
 }

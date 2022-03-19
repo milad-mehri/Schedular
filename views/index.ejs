@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Schedular">
     <title>Schedular - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
     <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
 </head>
 
@@ -16,12 +16,73 @@
         <button id="nav-elem" onclick="location.href='/'">
             <i class="nav-icon fas fa-home"> Home</i>
         </button>
-        <button id="nav-elem" onclick="location.href='/er-login'">
-            <i class="nav-icon fas fa-sign-in-alt"> Interviewer</i>
-        </button>
-        <button id="nav-elem" onclick="location.href='/ee-login'">
-            <i class="nav-icon fas fa-sign-in-alt"> Interviewee</i>
-        </button>
+        <% if(!session.loggedin) { %>
+            <button id="nav-elem" onclick="location.href='/er-login'">
+                <i class="nav-icon fas fa-sign-in-alt"> Interviewer</i>
+            </button>
+            <button id="nav-elem" onclick="location.href='/ee-login'">
+                <i class="nav-icon fas fa-sign-in-alt"> Interviewee</i>
+            </button>
+            <% } else { %>
+                <button id="nav-elem" onclick="location.href='/settings'">
+                    <i class="nav-icon fas fa-gear"> Edit</i>
+                </button>
+
+                <button id="nav-elem" onclick="location.href='/logout'">
+                    <i class="nav-icon fas fa-sign-out-alt"> Logout</i>
+                </button>
+
+                <% } %>
+    </div>
+
+
+    <div id="main">
+        <div id="boxes">
+
+            <div class="box">
+                <div id="date">29</div>
+                <div id="info">
+                    interview with milad 5:00pm
+                </div>
+            </div>
+            <div class="box">
+                <div id="date">29</div>
+                <div id="info">
+                    interview with milad 5:00pm
+                </div>
+            </div>
+            <div class="box">
+                <div id="date">29</div>
+                <div id="info">
+                    interview with milad 5:00pm
+                </div>
+            </div>
+            <div class="box">
+                <div id="date">29</div>
+                <div id="info">
+                    interview with milad 5:00pm
+                </div>
+            </div>
+            <div class="box">
+                <div id="date">29</div>
+                <div id="info">
+                    interview with milad 5:00pm
+                </div>
+            </div>
+            <div class="box">
+                <div id="date">29</div>
+                <div id="info">
+                    interview with milad 5:00pm
+                </div>
+            </div>
+            <div class="box">
+                <div id="date">29</div>
+                <div id="info">
+                    interview with milad 5:00pm
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="/javascript/script.js"></script>
 </body>

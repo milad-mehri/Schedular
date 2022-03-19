@@ -56,5 +56,39 @@ a {
 
 i {
     font-family: Ubuntu;
-padding: 10px;
+    padding: 10px;
+}
+
+#main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+
+#boxes {
+    width: 70%;
+
+}
+
+.box {
+    justify-content: space-around;
+
+    display: flex;
+    border-radius: 10px;
+    background: #8DE4FF;
+    padding: 50px;
+    margin: 10px;
+}
+
+#date {
+    width: 20%;
+    border-radius: 10px;
+
+}
+
+#info {
+    border-radius: 10px;
+    width: 80%;
 }

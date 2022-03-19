@@ -204,10 +204,10 @@ app.post('/ee-join', async (req, res) => {
 
     } else {
         bcrypt.hash(password, saltRounds, async function (err, hash) {
-            let user = await db.newInterviewee(username, hash, joinTimeStamp, req.body.github, req.body.website, req.body.linkedin)
+            let user = await db.newInterviewee(username, hash, joinTimeStamp, email, req.body.github || '', req.body.website || '', req.body.linkedin || '')
             req.session.user = user
             req.session.loggedin = true
-            res.render('index')
+            res.render('index', { session: req.session })
         });
 
     }
@@ -287,7 +287,7 @@ app.post('/er-join', async (req, res) => {
             let user = await db.newInterviewer(username, hash, joinTimeStamp, email)
             req.session.user = user
             req.session.loggedin = true
-            res.render('index')
+            res.render('index', { session: req.session })
         });
 
     }
