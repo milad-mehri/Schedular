@@ -5,6 +5,15 @@ html, body {
     padding: 0;
     font-family: Ubuntu;
     background-image: url('/assets/index/Background.png');
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+@media only screen and (max-width: 500px) {
+    #boxes {
+        width: 80%;
+    }
 }
 
 button {
@@ -12,7 +21,7 @@ button {
 }
 
 a {
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none;
 }
 
@@ -72,6 +81,10 @@ i {
 
 }
 
+p {
+    line-height: 3;
+}
+
 .box {
     justify-content: space-around;
 
@@ -113,3 +126,8 @@ input[type="submit"] {
     text-align: center;
     color: #FFFFFF;
 }   
+@media only screen and (max-width: 500px) {
+    #boxes {
+        width: 90%;
+    }
+}

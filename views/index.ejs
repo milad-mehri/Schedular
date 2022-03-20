@@ -6,30 +6,29 @@
     <meta name="viewport" content="width=device-width">
     <meta name="description" content="Schedular">
     <title>Schedular - Home</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
-    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
 
     <div id="nav-bar">
         <button id="nav-elem" onclick="location.href='/'">
-            <i class="nav-icon fas fa-home"> Home</i>
+            <i class="nav-icon fas fa-home"> </i>Home
         </button>
         <% if(!session.loggedin) { %>
             <button id="nav-elem" onclick="location.href='/er-login'">
-                <i class="nav-icon fas fa-sign-in-alt"> Interviewer</i>
+                <i class="nav-icon fas fa-sign-in-alt"> </i> Interviewer
             </button>
             <button id="nav-elem" onclick="location.href='/ee-login'">
-                <i class="nav-icon fas fa-sign-in-alt"> Interviewee</i>
+                <i class="nav-icon fas fa-sign-in-alt"> </i>Interviewee
             </button>
             <% } else { %>
                 <button id="nav-elem" onclick="location.href='/settings'">
-                    <i class="nav-icon fas fa-gear"> Edit</i>
+                    <i class="nav-icon fas fa-gear"> </i>Edit
                 </button>
 
                 <button id="nav-elem" onclick="location.href='/logout'">
-                    <i class="nav-icon fas fa-sign-out-alt"> Logout</i>
+                    <i class="nav-icon fas fa-sign-out-alt"> </i>Logout
                 </button>
 
                 <% } %>
@@ -40,7 +39,8 @@
 
         <div id="boxes">
             <% if(session.loggedin) {if (session.user.interviewer) { %>
-                Invite people to interview with you using your link: schedular.milad.wtf/schedule/<%= session.user.username%>
+                Invite people to interview with you using your link: schedular.milad.wtf/schedule/<%=
+                    session.user.username%>
                     <% if(session.user.appointments) { Object.keys(session.user.appointments).forEach(key=> {
                         %>
                         <div class="box">
@@ -76,7 +76,16 @@
                                     <% }) } %>
 
 
-                                        <% } } %>
+                                        <% } } else { %>
+
+
+                                            <h1>Schedular</h1>
+
+                                            <h5>Schedule interviews efficiently and easily</h5>
+
+                                            <p>Schedular is a website that allows interviewers and interviewees to easily find a time which they are both able to meet. The interviewer simply states their availibility in the settings tab then sends a link to an interviewee who does the same. The interviewee presses the link and a meeting will be created. The interviewee will recieve and sms message and the meeting will appear on the home page of both members. </p>
+                                           <a href="https://github.com/milad-mehri/Schedular">  <i class="fa-brands fa-github"></i>View on github.</a> <a href="https://devpost.com/software/schedular">View on devpost.</a>
+                                            <% } %>
         </div>
 
     </div>
