@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
+require('dotenv').config();
 
-const { mongoUri } = require('../config.json')
+const mongoUri  = process.env.mongoUri
 async function mongo() {
     await mongoose.connect(mongoUri, {
 

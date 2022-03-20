@@ -1,5 +1,7 @@
-const { TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN } = require('./config.json')
+require('dotenv').config();
 
+let TWILIO_ACCOUNT_SID = process.env.TWILIO_ACCOUNT_SID
+let TWILIO_AUTH_TOKEN = process.env.TWILIO_AUTH_TOKEN
 // twilio
 const accountSid = TWILIO_ACCOUNT_SID;
 const authToken = TWILIO_AUTH_TOKEN;
