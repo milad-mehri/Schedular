@@ -147,7 +147,7 @@ app.get('/schedule/:user', async (req, res) => {
 
     result.appointments[`${common[0].split(' ')[0]} ${common[0].split(' ')[1]}`] = req.session.user.username
     await db.setInterviewer(result.username, 'appointments', result.appointments)
-    req.session.user.appointments[`${common[0].split(' ')[0]} ${common[0].split(' ')[1]}`] = req.session.user.username
+    req.session.user.appointments[`${common[0].split(' ')[0]} ${common[0].split(' ')[1]}`] = result.username
     await db.setInterviewee(req.session.user.username, 'appointments', req.session.user.appointments)
 
     try {
