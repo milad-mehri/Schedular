@@ -4,7 +4,7 @@ const interviewer = require('./models/interviewer');
 
 
 const setInterviewee = async (userid, thingtoset, value) => {
-    interviewee.findOneAndUpdate({ _id: userid }, {
+    interviewee.findOneAndUpdate({ username: userid }, {
         $set: {
             [thingtoset]: value
         }
@@ -13,7 +13,7 @@ const setInterviewee = async (userid, thingtoset, value) => {
     })
 }
 const setInterviewer = async (userid, thingtoset, value) => {
-    interviewer.findOneAndUpdate({ _id: userid }, {
+    interviewer.findOneAndUpdate({ username: userid }, {
         $set: {
             [thingtoset]: value
         }

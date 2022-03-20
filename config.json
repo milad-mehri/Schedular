@@ -1,3 +1,5 @@
 {
-    "mongoUri": "mongodb+srv://milad:miladmilad@schedule.fefoy.mongodb.net/database?retryWrites=true&w=majority"
+    "mongoUri": "mongodb+srv://milad:miladmilad@schedule.fefoy.mongodb.net/database?retryWrites=true&w=majority",
+    "TWILIO_ACCOUNT_SID": "ACae59eab0a9e9fbcd47532cf9429cc5bb",
+    "TWILIO_AUTH_TOKEN": "8eedf18c9c7fd66387f936a5e9833b62"
 }

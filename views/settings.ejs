@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Schedular">
+    <title>Schedular - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div id="nav-bar">
+        <button id="nav-elem" onclick="location.href='/'">
+            <i class="nav-icon fas fa-home"> Home</i>
+        </button>
+        <% if(!session.loggedin) { %>
+            <button id="nav-elem" onclick="location.href='/er-login'">
+                <i class="nav-icon fas fa-sign-in-alt"> Interviewer</i>
+            </button>
+            <button id="nav-elem" onclick="location.href='/ee-login'">
+                <i class="nav-icon fas fa-sign-in-alt"> Interviewee</i>
+            </button>
+            <% } else { %>
+                <button id="nav-elem" onclick="location.href='/settings'">
+                    <i class="nav-icon fas fa-gear"> Edit</i>
+                </button>
+
+                <button id="nav-elem" onclick="location.href='/logout'">
+                    <i class="nav-icon fas fa-sign-out-alt"> Logout</i>
+                </button>
+
+                <% } %>
+    </div>
+
+
+    <div id="main">
+        <div id="boxes">
+            <form action="update-settings" method="POST">
+                <input type="submit" value="Update">
+
+                <% for (let i=Date.now(); i < (24*60*60*7*1000 + Date.now()); i+=(24*60*60*1000)){ %>
+
+
+                    <div class="box">
+                        <div id="date">
+                            <%= new Date(i).toString().split` `.slice(0,3).join(' ') %>
+                        </div>
+                        <div id="info">
+<% for (let b= 1; b < 13; b++ ) {   %>
+    <% if (session.user.availability ){if (session.user.availability[new Date(i).toString().split` `[2]]) {
+        if (session.user.availability[new Date(i).toString().split` `[2]][b.toString()] === true) { %>
+            <input type="checkbox" id="<%= new Date(i).toString().split` `[2] %> <%= b %>" name="<%= new Date(i).toString().split` `[2] %> <%= b %>" value=true checked>
+            <label> <%=  b*2 -2 %> - <%= b*2 %></label><br>
+        <% } else { %>
+            <input type="checkbox" id="<%= new Date(i).toString().split` `[2] %> <%= b %>" name="<%= new Date(i).toString().split` `[2] %> <%= b %>" value=true>
+            <label> <%=  b*2 -2 %> - <%= b*2 %></label><br>
+            <% }
+        } else { %>
+            <input type="checkbox" id="<%= new Date(i).toString().split` `[2] %> <%= b %>" name="<%= new Date(i).toString().split` `[2] %> <%= b %>" value=true>
+            <label> <%=  b*2 -2 %> - <%= b*2 %></label><br>
+            <% }}else { %>
+                <input type="checkbox" id="<%= new Date(i).toString().split` `[2] %> <%= b %>" name="<%= new Date(i).toString().split` `[2] %> <%= b %>" value=true>
+                <label> <%=  b*2 -2 %> - <%= b*2 %></label><br>
+<% }} %>
+                        </div>
+                    </div>
+
+                    <% } %>
+
+            </form>
+
+        </div>
+
+    </div>
+    <script src="/javascript/script.js"></script>
+</body>
+
+</html>

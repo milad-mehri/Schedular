@@ -92,3 +92,24 @@ i {
     border-radius: 10px;
     width: 80%;
 }
+
+
+input[type="submit"]:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+input[type="submit"] {
+    width: 118px;
+    height: 42px;
+    margin-top: 5 px;
+    border: none;
+    background: #FF90C6;
+    border-radius: 14px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+}   

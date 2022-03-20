@@ -37,50 +37,46 @@
 
 
     <div id="main">
-        <div id="boxes">
 
-            <div class="box">
-                <div id="date">29</div>
-                <div id="info">
-                    interview with milad 5:00pm
-                </div>
-            </div>
-            <div class="box">
-                <div id="date">29</div>
-                <div id="info">
-                    interview with milad 5:00pm
-                </div>
-            </div>
-            <div class="box">
-                <div id="date">29</div>
-                <div id="info">
-                    interview with milad 5:00pm
-                </div>
-            </div>
-            <div class="box">
-                <div id="date">29</div>
-                <div id="info">
-                    interview with milad 5:00pm
-                </div>
-            </div>
-            <div class="box">
-                <div id="date">29</div>
-                <div id="info">
-                    interview with milad 5:00pm
-                </div>
-            </div>
-            <div class="box">
-                <div id="date">29</div>
-                <div id="info">
-                    interview with milad 5:00pm
-                </div>
-            </div>
-            <div class="box">
-                <div id="date">29</div>
-                <div id="info">
-                    interview with milad 5:00pm
-                </div>
-            </div>
+        <div id="boxes">
+            <% if(session.loggedin) {if (session.user.interviewer) { %>
+                Invite people to interview with you using your link: localhost:3000/schedule/<%= session.user.username%>
+                    <% if(session.user.appointments) { Object.keys(session.user.appointments).forEach(key=> {
+                        %>
+                        <div class="box">
+                            <div id="date">
+                                <%= key.split` `[0] %>
+                            </div>
+                            <div id="info">
+                                Appointment with <%= session.user.appointments[key] %> - <%= parseInt(key.split` `[1])
+                                        *2 -2 %> to <%= parseInt(key.split` `[1]) *2 %>
+                            </div>
+                        </div>
+                        <% }) } %>
+
+
+
+                            <% }else { %>
+                                Ask for a link from an interviewer to get scheduled.
+
+
+                                <% if(session.user.appointments) { Object.keys(session.user.appointments).forEach(key=>
+                                    {
+                                    %>
+                                    <div class="box">
+                                        <div id="date">
+                                            <%= key.split` `[0] %>
+                                        </div>
+                                        <div id="info">
+                                            Appointment with <%= session.user.appointments[key] %> - <%=
+                                                    parseInt(key.split` `[1]) *2 -2 %> to <%= parseInt(key.split` `[1])
+                                                        *2 %>
+                                        </div>
+                                    </div>
+                                    <% }) } %>
+
+
+                                        <% } } %>
         </div>
 
     </div>

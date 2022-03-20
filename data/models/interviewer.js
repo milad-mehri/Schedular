@@ -18,6 +18,11 @@ const unReqObject = {
     type: Object,
     required: false
 }
+const reqObject = {
+    type: Object,
+    required: true,
+    default : {'1913' : false}
+}
 
 const interviewer = mongoose.Schema({
 
@@ -26,7 +31,7 @@ const interviewer = mongoose.Schema({
     email: reqString,
     joinTimeStamp: reqNumber,
     appointments: unReqObject,
-    availability: unReqObject,
+    availability: reqObject,
     interviewer: { type: Boolean }
 })
 
