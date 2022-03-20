@@ -40,7 +40,7 @@
 
         <div id="boxes">
             <% if(session.loggedin) {if (session.user.interviewer) { %>
-                Invite people to interview with you using your link: localhost:3000/schedule/<%= session.user.username%>
+                Invite people to interview with you using your link: schedular.milad.wtf/schedule/<%= session.user.username%>
                     <% if(session.user.appointments) { Object.keys(session.user.appointments).forEach(key=> {
                         %>
                         <div class="box">

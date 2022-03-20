@@ -68,8 +68,7 @@ i {
 
 
 #boxes {
-    width: 50%;
-
+    width: 70%;
 }
 
 .box {
@@ -78,7 +77,7 @@ i {
     display: flex;
     border-radius: 10px;
     background: #8DE4FF;
-    padding: 25px;
+    padding: 50px;
     margin: 10px;
 }
 

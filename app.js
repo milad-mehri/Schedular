@@ -143,7 +143,7 @@ app.get('/schedule/:user', async (req, res) => {
     })
 
 
-    if (common.length === 0)    return    res.render('error', { message: "No common availability"}) 
+    if (common.length === 0) return res.render('error', { message: "No common availability" })
 
     result.appointments[`${common[0].split(' ')[0]} ${common[0].split(' ')[1]}`] = req.session.user.username
     await db.setInterviewer(result.username, 'appointments', result.appointments)
@@ -162,7 +162,7 @@ app.get('/schedule/:user', async (req, res) => {
     } catch (e) {
         console.log('Invalid phone number')
     }
-    return res.render('error', { message: `You have been booked on ${common[0].split(' ')[0]} at the times between ${parseInt(common[0].split(' ')[1]) * 2 - 2} and ${parseInt(common[0].split(' ')[1]) * 2}.`})
+    return res.render('error', { message: `You have been booked on ${common[0].split(' ')[0]} at the times between ${parseInt(common[0].split(' ')[1]) * 2 - 2} and ${parseInt(common[0].split(' ')[1]) * 2}.` })
 
 })
 
@@ -449,6 +449,6 @@ app.get('/data', (req, res) => {
     res.json(req.session)
 })
 
-server.listen(4000, function () {
+server.listen(3000, function () {
     console.log("Listening on port 3000")
 })
